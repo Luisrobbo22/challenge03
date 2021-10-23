@@ -51,7 +51,13 @@ public class UsuarioController {
 
         if (Optional.ofNullable(cpf).isPresent()
                 && Optional.ofNullable(id).isPresent()) {
-            return ResponseEntity.ok().body(usuarioService.findByCpf(cpf));
+
+            Usuario usuario = usuarioService.findByCpf(cpf);
+            if (!Optional.ofNullable(usuario).isPresent()){
+                return ResponseEntity.notFound().build();
+            }
+
+            return ResponseEntity.ok().body(usuario);
         }
 
         return ResponseEntity.of(usuarioService.findById(id));
