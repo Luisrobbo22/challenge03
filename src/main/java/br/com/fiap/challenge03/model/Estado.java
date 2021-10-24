@@ -1,6 +1,7 @@
 package br.com.fiap.challenge03.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Estado implements Serializable {
     private Usuario usuario;
 
     @CreationTimestamp
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "dt_atualizacao", nullable = false)
     @NotNull(message = "Campo dt_atualizacao é obrigatório")
     private Calendar dataAtualizacao;

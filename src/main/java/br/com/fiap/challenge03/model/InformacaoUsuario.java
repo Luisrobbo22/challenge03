@@ -1,6 +1,7 @@
 package br.com.fiap.challenge03.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class InformacaoUsuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "nr_atualizacao", nullable = false)
     @NotNull(message = "O campo nr_atualizacao é obrigatório")
     private Integer numeroAtualizacao;
@@ -35,6 +37,7 @@ public class InformacaoUsuario implements Serializable {
     private Usuario usuario;
 
     @CreationTimestamp
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "dt_atualizacao")
     @NotNull(message = "O campo dt_atualizacao é obrigatório")
     private Calendar dataAtualizacao;

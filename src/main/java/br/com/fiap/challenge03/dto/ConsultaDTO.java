@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Calendar;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +17,7 @@ public class ConsultaDTO {
 
     private String cpf;
 
-    private Calendar dataNascimento;
+    private Date dataNascimento;
 
     private Calendar dataAtualizacaoEstado;
 

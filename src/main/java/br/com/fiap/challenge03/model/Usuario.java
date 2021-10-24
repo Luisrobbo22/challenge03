@@ -1,5 +1,6 @@
 package br.com.fiap.challenge03.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -42,10 +44,11 @@ public class Usuario implements Serializable {
     @JsonIgnore
     private String senha;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     @Column(name = "dt_nascimento")
     @NotNull(message = "Campo dataNascimento obrigatório")
-    private Calendar dataNascimento;
+    private Date dataNascimento;
 
     @Column(name = "nr_rg")
     private String rg;
