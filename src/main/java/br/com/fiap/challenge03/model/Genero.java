@@ -18,7 +18,7 @@ public class Genero implements Serializable {
 
     @Id
     @Column(name = "id_genero", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "ds_genero")
