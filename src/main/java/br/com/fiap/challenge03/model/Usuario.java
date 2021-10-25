@@ -55,7 +55,7 @@ public class Usuario implements Serializable {
 
     @Column(name = "nr_cpf", unique = true)
     @NotBlank(message = "Campo CPF obrigatório")
-    @Size(min = 11, max = 13)
+    @Size(min = 11, max = 15)
     private String cpf;
 
     @OneToOne(cascade = CascadeType.ALL)
